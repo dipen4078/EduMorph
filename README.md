@@ -45,8 +45,8 @@ Python 3.11
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/dipen4078/Edumorph.git
-cd Edumorph
+git clone https://github.com/dipen4078/EduMorph.git
+cd EduMorph
 ```
 ### 2. Create and activate a virtual environment(recommended)
 ```bash
