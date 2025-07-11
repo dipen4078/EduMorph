@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('back.png') no-repeat center center fixed; /* Add your background image */
+    background-size: cover; /* Ensure the background covers the entire page */
+    height: 100vh; /* Set height to 100% of the viewport */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add some padding */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.page-title {
+    text-align: center;
+    color:rgb(248, 238, 36); /* Nice color for the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.container {
+    width: 60%;
+    background-color: rgb(255, 255, 255); /* Semi-transparent background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 50px;
+}
+
+h3 {
+    color: #2c3e50;
+}
+
+ul {
+    list-style-type: none; /* This removes the bullet points */
+    padding-left: 0; /* Optional: remove padding */
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.section {
+    margin-top: 20px;
+}
+
+.bottom-button {
+    background-color: #3498db; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for the button */
+    text-decoration: none; /* No underline */
+    margin-top: 20px; /* Space above the button */
+}
+
+.bottom-button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+}

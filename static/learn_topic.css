@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: url('back.png') no-repeat center center fixed; /* Replace with a suitable background image */
+    background-size: cover; /* Ensure the background covers the entire area */
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 20px; /* Added horizontal padding */
+    position: relative;
+    margin-left: 20px;
+}
+
+.watermark-container {
+    position: absolute;
+    top: 70%; /* Moved the watermark slightly lower */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically relative to its new position */
+    z-index: 1; /* Ensure the watermark stays behind other elements */
+    opacity: 0.2; /* Reduced opacity for watermark effect */
+}
+
+.watermark {
+    width: 400px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+h1 {
+    color: rgb(248, 238, 36); /* Set <h1> text color to purple */
+    font-size: 35px;
+    margin-bottom: 50px;
+    text-align: center; /* Center the heading */
+    position: relative;
+    z-index: 2; /* Ensure the text appears above the watermark */
+}
+
+h2 {
+    color: rgb(236, 42, 84);
+    font-size: 28px;
+    margin: 20px 0 5px;
+    text-align: left; /* Align heading to the left */
+    position: relative;
+    z-index: 2; /* Ensure the text appears above the watermark */
+}
+
+.content {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    z-index: 2; /* Ensure the content appears above the watermark */
+}
+
+.content br {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+.res{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.ai_btn{
+    font-size:15px;
+    font-weight: bold;
+    color:whitesmoke;
+    height:40px;
+    width: 120px;
+    border-radius: 8px;
+    background-color: #5f8cab;
+    
+}
+.ai_btn:hover{
+    background-color: rgb(105, 105, 225);
+}
+
+p{
+    margin-top: 20px;
+    color:azure;
+    text-align: center;
+}
+.aibtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}

@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: url('back.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.watermark-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.watermark {
+    width: 350px;
+    height: auto;
+    opacity: 0.3; /* Reduced opacity for watermark */
+}
+
+.content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the watermark */
+    text-align: left; /* Align content to the left */
+    margin-top: 150px;
+    margin-left: 50px; /* Moves the container to the left */
+    width: 300px; /* Set a width for the container */
+    
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color:rgb(248, 238, 36);
+}
+
+.wel {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.dash {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between buttons */
+    color:rgb(4, 17, 30)
+}
+.btn{
+  background-color: rgb(186, 161, 113);
+  font-size: 20px;
+}
+
+a {
+    display: inline-block;
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #fb8c00;
+}
+
+/* .logout { */
+    /* background-color: #e94b35; */
+/* } */
+
+.logout:hover {
+    background-color: #c43b28;
+}
+
+.footer {
+    background-color: #757879;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.logos img {
+    width: 50px;
+    margin: 0 10px;
+}
+.footer p{
+    color:white;
+    font-size: 20px;
+}

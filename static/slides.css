@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('back.png') no-repeat center center fixed; /* Add your background image */
+    background-size: cover; /* Ensure the background covers the entire page */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.logo {
+    position: absolute; /* Position the logo absolutely */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+    max-width: 120px; /* Set maximum width for the logo */
+}
+
+.main-title {
+    margin-top: 20vh; /* Add margin for the title */
+    text-align: center; /* Center the title */
+    color: #3498db; /* Title color */
+    font-size: 2rem; /* Adjust font size */
+    margin-bottom: 5vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for the content */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 80%; /* Set width of the container */
+    max-width: 600px; /* Maximum width for larger screens */
+    margin-top: 20px; /* Space between title and container */
+    height: 30vh;
+    margin-bottom: 5vh;
+}
+
+h2 {
+    text-align: center; /* Center the heading */
+}
+
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove left padding */
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.button-container {
+    display: flex; /* Flexbox for buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 20px; /* Space above buttons */
+    width: 80%; /* Set width to match container */
+    max-width: 600px; /* Maximum width for buttons */
+}
+
+.button {
+    background-color: #3498db; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    margin-left: 10px; /* Space between buttons */
+}
+
+.button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+}
+
+h3 {
+    margin-top: 20px; /* Space above the h3 */
+    text-align: center; /* Center the h3 */
+}

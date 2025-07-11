@@ -1,0 +1,111 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative;
+    overflow: hidden; /* Prevent any unwanted overflow */
+}
+
+/* Background Image */
+.background {
+    background: url('back.png') no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1; /* Ensure no dimming or opacity change */
+    z-index: 0;
+}
+
+/* Watermark Image */
+.top-left-image {
+    position: absolute;
+    top: 20px; /* Position it near the top */
+    left: 20px; /* Position it near the left */
+    z-index: 1;
+}
+
+.top-left-image img {
+    max-width: 100px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Form Container */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Remove any unwanted focus or overlay effects */
+.login-container:focus, .background:focus {
+    outline: none;
+    box-shadow: none;
+    background: none;
+}
+
+/* Form Header */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Labels */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Form Inputs */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+/* Ensure no focus dimming */
+body:focus, .login-container:focus-within {
+    outline: none;
+    background: none;
+    opacity: 1;
+}
