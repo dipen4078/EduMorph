@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Topic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./select_topic.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='./edumorph.png') }}" alt="Top Left Image" class="top-left-image"> <!-- Add your image here -->
+    <div class="form-container">
+        <h2>Select a Topic</h2>
+        <form method="POST">
+            <div class="input-group">
+                <label for="topic">Topic:</label>
+                <input type="text" id="topic" name="topic" required>
+            </div>
+            <div class="input-group">
+                <label for="level">Level:</label>
+                <select id="level" name="level" required>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="pro">Pro</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

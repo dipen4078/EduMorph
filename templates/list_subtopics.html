@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtopics for {{ topic }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./list_subtopics.css') }}">
+<body>
+    <h1 class="page-title">Subtopics for {{ topic }} - Level: {{ level }}</h1> <!-- Moved outside the container -->
+
+    <div class="container">
+        <div class="section">
+            <ul>
+                {% for subtopic in subtopics %}
+                    {% if subtopic[0].isdigit() %}
+                        <li class="list-group-item">
+                            <a href="{{ url_for('learn_topic', topic=topic, subtopic=subtopic, level=level) }}">{{ subtopic }}</a>
+                        </li>
+                    {% else %}
+                        <li>{{ subtopic }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <h3>Select any one of Topic from above by clicking on it.</h3>
+    </div>
+
+</body>
+</html>

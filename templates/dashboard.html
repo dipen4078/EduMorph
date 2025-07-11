@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Use url_for to link the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./dashboard.css') }}">
+</head>
+<body>
+    <div class="watermark-container">
+        <!-- Use url_for to link the image -->
+        <img src="{{ url_for('static', filename='./edumorph.png') }}" alt="Watermark Image" class="watermark">
+    </div>
+    <div class="content">
+        <h1>Dashboard</h1>
+        <p class="wel"><b>Welcome, {{ current_user.username }}!</b></p>
+        <div class="dash">
+            <a class="btn" href="{{ url_for('select_topic') }}">Select Topic</a>
+            <a class="logout btn" href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+    
+</body>
+</html>

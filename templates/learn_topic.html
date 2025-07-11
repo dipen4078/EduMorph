@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Topic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./learn_topic.css') }}">
+</head>
+<body>
+    <div class="watermark-container">
+        <img src="{{ url_for('static', filename='./edumorph.png') }}" alt="Center Watermark Image" class="watermark"> <!-- Watermark image -->
+    </div>
+    <h1>Learning Resources for {{ subtopic }} under {{ topic }}</h1>
+
+    <h2>Roadmap</h2>
+    <div class="content">{{ roadmap|replace('\n', '<br>')|safe }}</div>
+    
+    <h2>Resources</h2>
+    <div class="content res">{{ resources|replace('\n', '<br>')|safe }}
+        <!-- Learn with AI Button as a Link -->
+        <a href="{{ url_for('generate_slides', topic=topic, subtopic=subtopic, level=level) }}">
+            <button class="ai_btn">Learn with AI</button>
+            
+        </a>
+    </div>
+    <div class="aibtn">
+        
+        <button class ="ai_btn" onclick="history.back();">Back to Subtopics</button>
+    </div>
+    
+    <h3><b>Note:After you click "Learn with AI", read the PDF saved on your file which contains detailed explanation for the subtopic.</b></h3>
+</body>
+</html>

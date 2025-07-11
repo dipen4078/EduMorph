@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>MCQ Test for {{ subtopic }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='mcq_test.css') }}"/>
+  <style>
+    .button-container { text-align: center; margin-top: 20px; }
+    .styled-button {
+      background-color: #4CAF50; border: none; color: white;
+      padding: 12px 24px; font-size: 16px; cursor: pointer;
+      border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+    .styled-button:hover { background-color: #45a049; }
+    .mcq-question { margin-bottom: 25px; }
+    ul { list-style: none; padding-left: 0; }
+    li { margin: 8px 0; }
+    .note { font-style: italic; text-align: center; margin-top: 20px; color: #555; }
+  </style>
+</head>
+<body>
+  <img src="{{ url_for('static', filename='edumorph.png') }}" alt="Logo" class="logo"/>
+  <div class="container">
+    <h1>MCQ Test for {{ subtopic }}</h1>
+
+    {% if questions %}
+      {% for q in questions %}
+        {% set qid = loop.index0 %}
+        <div class="mcq-question" id="question-{{ qid }}">
+          <p><strong>Q{{ loop.index }}. {{ q.question }}</strong></p>
+          <ul>
+            {% for option in q.options %}
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="q{{ qid }}"
+                    value="{{ option|e }}"
+                    data-qidx="{{ qid }}"
+                    class="mcq-option"
+                  />
+                  {{ option }}
+                </label>
+              </li>
+            {% endfor %}
+          </ul>
+          <p id="feedback-{{ qid }}" style="font-weight:bold;"></p>
+          <hr/>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No questions available.</p>
+    {% endif %}
+
+    <div class="button-container">
+      <button class="styled-button" onclick="history.back();">Back to Video</button>
+    </div>
+    <p class="note">If you get more than 2 wrong answers, learn the topic again</p>
+  </div>
+
+  <!-- Embedded correct answers -->
+  <script id="correct-answers" type="application/json">
+    {{ correct_answers | safe }}
+  </script>
+
+  <script>
+    const correctAnswers = JSON.parse(
+      document.getElementById('correct-answers').textContent
+    );
+
+    function normalize(text) {
+      return text.replace(/\s/g, '').toLowerCase();
+    }
+
+    function checkAnswer(index, selectedValue) {
+      let correct = correctAnswers[index];
+      if (!correct) return;
+
+      // Remove prefix like "Correct Answer: " if present
+      correct = correct.replace(/^Correct Answer:\s*/i, "").trim();
+
+      const match = correct.match(/([A-Da-d])\)?/);
+      if (!match) return;
+
+      const correctLetter = match[1].toLowerCase();
+      const selectedLetter = normalize(selectedValue)[0];
+      const isCorrect = selectedLetter === correctLetter;
+
+      const feedbackEl = document.getElementById('feedback-' + index);
+      const questionDiv = document.getElementById('question-' + index);
+
+      if (isCorrect) {
+        feedbackEl.style.color = 'green';
+        feedbackEl.textContent = '✔️ Correct!';
+      } else {
+        feedbackEl.style.color = 'red';
+        feedbackEl.innerHTML = '❌ Wrong. The correct answer is: <b>' + correct + '</b>';
+      }
+
+      // Disable all inputs for this question
+      questionDiv.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.disabled = true;
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.mcq-option').forEach(input => {
+        input.addEventListener('change', function () {
+          const index = this.getAttribute('data-qidx');
+          checkAnswer(index, this.value);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

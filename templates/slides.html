@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides on {{ subtopic }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./slides.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='./edumorph.png') }}" alt="Logo" class="logo"> <!-- Image at the top left -->
+
+    <!-- Text moved outside of the box -->
+    <h1 class="main-title">Slides for {{ subtopic }} under {{ topic }}</h1>
+
+    <div class="container">
+        <h2>Generated Slides</h2>
+        <ul>
+            {% for slide in slides %}
+                <li>{{ slide }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="button-container">
+        <a href="{{ url_for('learn_topic', topic=topic, subtopic=subtopic, level=level) }}" class="button">Back to Learning</a>
+        <a href="{{ url_for('mcq_test', topic=topic, subtopic=subtopic) }}" class="button">Take the MCQ Test</a>
+    </div>
+
+    <h3>The PDF file for learning the topic has been saved to your PC. Please refer to it for detailed explanations.</h3>
+    <button onclick="history.back();">Back to Roadmap</button>
+</body>
+</html>
