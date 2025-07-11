@@ -1,0 +1,7 @@
+To generate the API key:
+1. go to groq.com
+2. Go to developors section and click on Start Building
+3. Login with your mail
+4. Create Api key 
+5. Eneter name for key and copy the key
+6. Copy the key to the code
